@@ -1,94 +1,126 @@
-# Marketing Campaign Performance & A/B Uplift Analysis
+# A/B Testing Analysis: Facebook Ads vs Google AdWords Campaigns
 
-This repository contains a complete A/B testing analytics project comparing **Campaign A vs Campaign B** to measure uplift in conversions, CTR, acquisition cost efficiency, and overall campaign ROI impact.  
-Using Python-driven hypothesis testing and marketing KPI evaluation, the project determines which campaign should be scaled based on statistically validated uplift.
+## 📌 Project Overview
 
----
-
-## 📁 Project Files
-
-| File | Description |
-|------|-------------|
-| `AB Testing (Marketing Campaigns).ipynb` | Main Python notebook with cleaning, KPI extraction, hypothesis testing, uplift metrics & visualization |
-| `marketing_campaign.csv` | Source dataset containing impressions, clicks, spend, conversions, revenue data |
+This project analyzes and compares the performance of two digital advertising campaigns — **Facebook Ads** and **Google AdWords Ads** — conducted throughout the year **2019**.  
 
 ---
 
-## Objective
+## 🎯 Business Problem
 
-- Compare performance of **two campaign variants** (A vs B)
-- Calculate uplift in:
-  - Conversion Rate
-  - Click-Through Rate (CTR)
-  - Revenue Per User
-  - Cost Per Acquisition (CAC)
-  - Return on Marketing Spend (ROMS)
-- Validate uplift using statistical significance testing
+As a marketing analytics team, we want to answer the following questions:
+
+- Which advertising platform performs better overall?
+- Which campaign generates higher engagement and conversions?
+- Which platform is more cost-effective?
+- Are observed performance differences statistically meaningful?
+---
+## 📊 Dataset Description
+
+The dataset contains **daily performance data for the year 2019** (365 rows), comparing two advertising platforms:
+
+- **Facebook Ad Campaign**
+- **Google AdWords Ad Campaign**
+
+Each row represents **one day of campaign activity**.
+
+### Key Features
+
+- **Date** – Calendar date of campaign performance
+- **Ad Views** – Number of impressions
+- **Ad Clicks** – Number of clicks received
+- **Ad Conversions** – Number of successful conversions
+- **Cost per Ad** – Cost incurred for running the ad
+- **Click-Through Rate (CTR)** – Clicks ÷ Views
+- **Conversion Rate** – Conversions ÷ Clicks
+- **Cost per Click (CPC)** – Cost ÷ Clicks
 
 ---
 
-## 📊 Key KPIs Calculated
+## 🧪 Analysis Approach
 
-| KPI | Formula | Purpose |
-|------|---------|---------|
-| Conversion Rate (CVR) | `Conversions / Clicks` | Measures conversion efficiency |
-| CTR | `Clicks / Impressions` | Measures ad engagement |
-| Lift % | `(B - A) / A * 100` | Quantifies improvement |
-| CPC | `Spend / Clicks` | Click cost efficiency |
-| CAC | `Spend / Conversions` | Acquisition efficiency |
-| ROMS | `Revenue / Spend` | Revenue generated per ₹ spent |
+The analysis follows a structured data analytics workflow:
 
----
+1. **Data Cleaning & Preparation**
+   - Checked for missing values
+   - Verified data consistency and date coverage
+   - Created derived metrics such as CTR, Conversion Rate, and CPC
 
-## 🧪 Statistical Methods Used
+2. **Exploratory Data Analysis (EDA)**
+   - Distribution analysis of clicks, conversions, and cost
+   - Time-based trends across the year
+   - Comparison of campaign performance using visualizations
 
-- **Two-proportion Z-test**
-- **p-value significance validation**
-- **Confidence interval comparison**
-- **Proportional uplift validation**
+3. **Campaign Comparison**
+   - Facebook Ads vs AdWords Ads
+   - CTR comparison
+   - Conversion efficiency
+   - Cost effectiveness (CPC and cost per conversion)
 
-Decision rule: If p-value < 0.05 → Campaign B uplift is statistically significant
-
-
----
-
-## 🔍 Findings & Insights
-
-- **Campaign B outperformed Campaign A** across conversion, CTR, and cost-efficiency KPIs.
-- **A/B Testing & Hypothesis Validation: Conducted a daily A/B test (365 days) comparing Facebook and AdWords
-    campaigns; used a T-Test (T = 46.85) to statistically prove Facebook conversions were significantly higher
-    (p < 0.05) than AdWords conversions.
-- **• Campaign Efficacy & Forecasting: Demonstrated Facebook’s superior conversion efficacy with a strong
-      correlation (r = 0.87) between Clicks and Conversions; developed a Linear Regression model achieving
-  R2 = 76.35% to accurately forecast future sales
-
-- p-value < 0.05 confirms **uplift is not due to randomness**, supporting full-scale rollout.
-- Increased engagement and stronger targeting match indicated optimized audience fit.
-
-> Replace `XX%` with your actual notebook outputs.
+4. **A/B Testing & Statistical Comparison**
+   - Evaluated whether performance differences are meaningful
+   - Compared average metrics across campaigns
+   - Focused on business impact rather than only statistical significance
 
 ---
 
-## 🧠 Business Recommendations
+## 📈 Key Insights & Findings
 
-- Scale **Campaign B** budget allocation for next cycle.
-- Retarget high-intent audience segments observed in B performance layer.
-- Deploy A/B variant learnings into future campaign creatives (copy, timing, placement).
-- Track long-term retention impact if dataset is extended.
+- One campaign consistently showed **higher engagement (CTR)** compared to the other.
+- Conversion patterns differed, indicating **platform-level behavioral differences**.
+- Cost efficiency varied across platforms, highlighting trade-offs between:
+  - Higher reach vs higher conversion quality
+- Certain days showed **outliers in conversions**, which were investigated during EDA.
+- Overall results suggest that **campaign choice should depend on business goals**:
+  - Awareness vs conversion-driven objectives
+
+> The analysis demonstrates that higher clicks do not always translate to higher conversions, emphasizing the importance of multi-metric evaluation.
+
+---
+
+## 🧠 Business Interpretation
+
+- A/B testing is not only about identifying a “winner”, but about understanding **how and why campaigns behave differently**.
+- Marketing decisions should consider:
+  - Cost per conversion
+  - Conversion efficiency
+  - Campaign consistency over time
+- The insights from this analysis can directly inform **budget allocation and channel strategy**.
 
 ---
 
-## 📦 Tech Stack
+## 🛠️ Tools & Technologies Used
 
-- Python
-- Pandas
-- NumPy
-- SciPy
-- Matplotlib / Seaborn
-- Scikit-learn (if used)
-- Jupyter Notebook
+- **Python**
+- **Pandas & NumPy** – Data manipulation
+- **Matplotlib & Seaborn** – Visualization
+- **Jupyter Notebook** – Analysis workflow
+
 
 ---
+
+## 📌 Key Learning Outcomes
+
+- Hands-on experience with A/B testing in a real marketing context
+- Improved understanding of campaign performance metrics
+- Ability to translate data insights into business recommendations
+- Strong foundation in exploratory data analysis and comparative analytics
+
+---
+
+## 🔮 Future Enhancements
+
+- Apply formal statistical hypothesis testing (t-test / non-parametric tests)
+- Segment analysis by time periods or campaign intensity
+- Extend analysis with predictive modeling for conversions
+- Dashboarding using Power BI or Tableau
+
+---
+
+## 🧾 Conclusion
+
+This project demonstrates how **data-driven analysis and A/B testing** can be used to evaluate marketing campaign effectiveness and guide business decisions.  
+It highlights the importance of combining **statistical reasoning with business context** when interpreting marketing performance.
 
 
 
